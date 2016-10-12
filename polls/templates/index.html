@@ -1,3 +1,15 @@
+{% load render_bundle from webpack_loader %}
+
+<html>
+<head>
+        {% render_bundle 'main' 'css' %}
+        {% render_bundle 'main' 'js' %}
+</head>
+
+<body>
 {% for question in questions_list %}
     <li>{{ question.question_test }}</li>
 {% endfor %}
+</body>
+
+</html>
