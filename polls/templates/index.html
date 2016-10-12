@@ -1,14 +1,7 @@
-{% load render_bundle from webpack_loader %}
+{% extends "index.layout.html" %}
 
-<html>
-<head>
-        {% render_bundle 'main' 'js' %}
-</head>
-
-<body>
-{% for question in questions_list %}
-    <li>{{ question.question_test }}</li>
-{% endfor %}
-</body>
-
-</html>
+{% block container %}
+    {% for question in questions_list %}
+        <li>{{ question.question_test }}</li>
+    {% endfor %}
+{% endblock %}
