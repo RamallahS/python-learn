@@ -3,14 +3,21 @@ var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
-  context: __dirname,
-  entry: './assets/js/index',
-  output: {
-      path: path.resolve('./assets/webpack_bundles/'),
-      filename: "[name]-[hash].js"
-  },
+    context: __dirname,
+    entry: './assets/js/index',
+    output: {
+        path: path.resolve('./assets/webpack_bundles/'),
+        filename: "[name]-[hash].js"
+    },
 
-  plugins: [
-    new BundleTracker({filename: './webpack-stats.json'})
-  ]
-}
+    plugins: [
+        new BundleTracker({filename: './webpack-stats.json'})
+    ],
+
+    module: {
+        loaders: [
+            {test: /\.css$/, loader: "style!css"},
+            {test: /\.scss$/, loaders: ["style", "css", "sass"]}
+        ]
+    }
+};
