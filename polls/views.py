@@ -4,11 +4,6 @@ from django.template import loader
 
 from .models import Question
 
-
-def auth_page(request):
-    return render(request, 'auth.form.html')
-
-
 # render variant 1
 def index(request):
     questions_list = Question.objects.all()
