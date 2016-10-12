@@ -1,0 +1,1 @@
+https://github.com/owais/django-webpack-loader
