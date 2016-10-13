@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate, logout, login
 from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_POST, require_GET
 from django.views.generic import TemplateView
@@ -32,7 +32,7 @@ class PageAuthReminderView(TemplateView, WithAuthMixin):
         return render(request, self.template_name)
 
 
-@require_GET
+# @require_GET
 def page_auth(request):
     # if request.user.is_authenticated:
     #   return redirect('/pools')
@@ -40,7 +40,9 @@ def page_auth(request):
         return render(request, 'auth.form.html')
     else:
         user = authenticate(username="root", password="pingpong22")
-        print(user)
+        if user is not None:
+            login(request, user)
+        return render(request, 'auth.form.html')
 
 
 def auth_logout_action(request):
