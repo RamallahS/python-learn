@@ -1,0 +1,8 @@
+{% extends 'index.layout.html' %}
+
+{% block container %}
+    <h1 class="page-header">
+        My animals
+        <a class="btn btn-primary pull-right" href="{% url 'dashboard.animals.new' %}">Add animal</a>
+    </h1>
+{% endblock %}
