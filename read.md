@@ -5,7 +5,8 @@
 https://github.com/owais/django-webpack-loader
 `sudo npm install webpack -g`
 `sudo pip install django-webpack-loader`
-## Livereload
+## Livereload 
+https://github.com/tjwalch/django-livereload-server
 `pip install django-livereload-server`
 Run Liverload server:
 `python3.4 ./manage.py livereload`
