@@ -1,7 +1,20 @@
 {% extends 'index.layout.html' %}
 
 {% block container %}
-    <form>
-        Reminder Form
+    <form method="post" action="{% url 'auth.page.reminder' %}">
+        {% csrf_token %}
+        <h1 class="page-header">Login form</h1>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="text" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+                   value="{{ form.email.value }}">
+            {% if form.errors.email %}{{ form.errors.email|join:"" }}{% endif %}
+        </div>
+        {% if exception %}
+            <div class="alert">
+                {{ exception }}
+            </div>
+        {% endif %}
+        <button type="submit" class="btn btn-default">Submit</button>
     </form>
 {% endblock %}

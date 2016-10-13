@@ -7,9 +7,7 @@
 </head>
 <body>
 
-<a href="{% url 'auth.page.registration' %}">Registration</a>
-<a href="{% url 'auth.page' %}">Login</a>
-<a href="{% url 'auth.page.reminder' %}">Reminder</a>
+{% include 'navbar.html' %}
 
 <div class="container">
     {% block container %}{% endblock %}

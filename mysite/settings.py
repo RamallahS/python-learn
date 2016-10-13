@@ -72,6 +72,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates/layouts'),
             os.path.join(BASE_DIR, 'templates/auth'),
+            os.path.join(BASE_DIR, 'templates/partials'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {

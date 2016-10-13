@@ -1,0 +1,19 @@
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'auth.logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'auth.page.registration' %}">Registration</a></li>
+                    <li><a href="{% url 'auth.page' %}">Login</a></li>
+                    <li><a href="{% url 'auth.page.reminder' %}">Reminder</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
