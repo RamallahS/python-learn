@@ -20,6 +20,10 @@ class Choice(models.Model):
         return self.choice_text
 
 
+class AnimalKind(models.Model):
+    name = models.CharField(max_length=100)
+
+
 class Animal(models.Model):
     name = models.CharField(max_length=100)
 
