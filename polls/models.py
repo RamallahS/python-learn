@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Question(models.Model):
@@ -24,3 +25,6 @@ class Animal(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('animal.edit', kwargs={'pk': self.pk})

@@ -5,7 +5,7 @@ from polls.models import Animal
 
 
 class DashboardIndex(TemplateView):
-    template_name = 'dashboard.index.html'
+    template_name = 'animals.list.html'
 
     def get(self, request, *args, **kwargs):
         animals = Animal.objects.all()
@@ -13,7 +13,7 @@ class DashboardIndex(TemplateView):
 
 
 class DashboardAnimalForm(TemplateView):
-    template_name = 'dashboard.animals.form.html'
+    template_name = 'polls/animal_form.html'
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)

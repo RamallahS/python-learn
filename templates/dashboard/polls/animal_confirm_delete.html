@@ -1,4 +1,20 @@
-<form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit" />
-</form>
+{% extends 'index.layout.html' %}
+
+{% block container %}
+    <form method="post">{% csrf_token %}
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Do you confirm to delete?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>{{ object }}</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'animals.list' %}" class="btn btn-default">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

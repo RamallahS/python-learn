@@ -1,0 +1,19 @@
+{% extends 'index.layout.html' %}
+
+{% block container %}
+    <h1 class="page-header">
+        My animals
+        <a class="btn btn-primary pull-right" href="{% url 'animals.new' %}">Add animal</a>
+        {% if object_list %}
+            <table>
+                {% for animal in object_list %}
+                    <tr>
+                        <td>{{ animal.name }}</td>
+                        <td><a href="{{ animal.get_absolute_url }}" class="btn btn-default">Edit</a></td>
+                        <td><a href="{% url 'animal.delete' animal.id %}" class="btn btn-default">Remove</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+    </h1>
+{% endblock %}

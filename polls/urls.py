@@ -6,7 +6,7 @@ from polls.services.auth.auth_views import PageAuthReminderView
 from . import views
 from .services.auth import auth_views
 
-from .modules.dashboard.animal_views import AnimalDelete
+from .modules.dashboard.animal_views import AnimalDelete, AnimalCreate, AnimalList, AnimalUpdate
 
 urlpatterns = [
     url(r'^$', views.index2, name='index'),
@@ -16,8 +16,8 @@ urlpatterns = [
     url(r'^auth/logout$', auth_views.auth_logout_action, name='auth.logout'),
 
     # Users Dashboard
-    url(r'^dashboard$', DashboardIndex.as_view(), name='dashboard.index'),
-    url(r'^dashboard/animals/new$', DashboardAnimalForm.as_view(), name='dashboard.animals.new'),
-    url(r'^dashboard/animals/save$', DashboardAnimalForm.as_view(), name='dashboard.animals.save'),
-    url(r'^dashboard/animals/remove/(?P<pk>[0-9+])$', AnimalDelete.as_view(), name='dashboard.animals.remove'),
+    url(r'^dashboard$', AnimalList.as_view(), name='animals.list'),
+    url(r'^dashboard/animals/new$', AnimalCreate.as_view(), name='animals.new'),
+    url(r'^dashboard/animals/edit/(?P<pk>\d+)$', AnimalUpdate.as_view(), name='animal.edit'),
+    url(r'^dashboard/animals/delete/(?P<pk>\d+)$', AnimalDelete.as_view(), name='animal.delete'),
 ]
