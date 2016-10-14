@@ -35,7 +35,7 @@ class PageAuthReminderView(TemplateView, WithAuthMixin):
 # @require_GET
 def page_auth(request):
     # if request.user.is_authenticated:
-    #   return redirect('/pools')
+    #   return redirect('/polls')
     if request.method == 'GET':
         return render(request, 'auth.form.html')
     else:
@@ -47,7 +47,7 @@ def page_auth(request):
 
 def auth_logout_action(request):
     logout(request)
-    return redirect('/pools')
+    return redirect('/polls')
 
 
 def page_reminder(request):

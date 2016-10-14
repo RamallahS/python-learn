@@ -4,5 +4,16 @@
     <h1 class="page-header">
         My animals
         <a class="btn btn-primary pull-right" href="{% url 'dashboard.animals.new' %}">Add animal</a>
+        {% if animals %}
+            <table>
+                {% for animal in animals %}
+                    <tr>
+                        <td>{{ animal.name }}</td>
+                        <td><a href="{% url 'dashboard.animals.save' %}" class="btn btn-default">Edit</a></td>
+                        <td><a href="{% url 'dashboard.animals.remove' animal.id %}" class="btn btn-default">Remove</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
     </h1>
 {% endblock %}
