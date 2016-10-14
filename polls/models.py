@@ -23,12 +23,19 @@ class Choice(models.Model):
 class AnimalKind(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 
 class Animal(models.Model):
     name = models.CharField(max_length=100)
+    animal_kind = models.ForeignKey(AnimalKind, on_delete=models.PROTECT, default=0)
 
     def __str__(self):
         return self.name
+
+    def get_animal_kinds(self):
+        return AnimalKind.objects.all()
 
     def get_absolute_url(self):
         return reverse('animal.edit', kwargs={'pk': self.pk})

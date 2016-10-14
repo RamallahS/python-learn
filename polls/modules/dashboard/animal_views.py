@@ -17,11 +17,11 @@ class AnimalList(AnimalMixin, ListView):
 
 
 class AnimalCreate(AnimalMixin, CreateView):
-    fields = ['name']
+    fields = ['name', 'animal_kind']
 
 
 class AnimalUpdate(AnimalMixin, UpdateView):
-    fields = ['name']
+    fields = ['name', 'animal_kind']
 
 
 class AnimalDelete(AnimalMixin, DeleteView):
