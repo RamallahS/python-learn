@@ -1,0 +1,23 @@
+[
+  {
+    "model": "polls.AnimalKind",
+    "pk": 1,
+    "fields": {
+      "name": "Cat"
+    }
+  },
+  {
+    "model": "polls.AnimalKind",
+    "pk": 2,
+    "fields": {
+      "name": "Dog"
+    }
+  },
+  {
+    "model": "polls.AnimalKind",
+    "pk": 3,
+    "fields": {
+      "name": "bird"
+    }
+  }
+]

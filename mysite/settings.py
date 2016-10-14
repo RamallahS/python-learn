@@ -30,6 +30,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
 
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, 'db_seed')
+]
+
 WEBPACK_LOADER = {
     'DEFAULT': {
         'CACHE': not DEBUG,
