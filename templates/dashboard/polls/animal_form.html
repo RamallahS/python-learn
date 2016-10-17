@@ -3,17 +3,20 @@
 {% block container %}
     <form method="post">
         {% csrf_token %}
+
         <h1 class="page-header">Animal</h1>
+
         <div class="form-group">
             <label>Name</label>
-            <input type="text" name="name" class="form-control" value="{{ animal.name }}">
+            {{ form.name }}
         </div>
 
-        <select>
-            {% for animal_kind in animal.get_animal_kinds %}
-                <option value="{{ animal_kind.id }}">{{ animal_kind }}</option>
-            {% endfor %}
-        </select>
+        <div class="form-group">
+            <label>Kind of animal</label>
+            {{ form.animal_kind }}
+        </div>
+
+
 
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
