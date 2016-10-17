@@ -9,6 +9,9 @@ http://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3
 ### Help
  - http://toly.github.io/blog/2014/03/14/getting-started-with-django-rest-framework-and-angularjs/
  - https://habrahabr.ru/post/160117/
+## Install Django REST API Login
+`sudo pip install djangorestframework-jwt`
+
 
 ## Install and update Node
 `sudo npm cache clean -f`
