@@ -45,5 +45,5 @@ urlpatterns = [
     url(r'^dashboard/animals/delete/(?P<pk>\d+)$', AnimalDelete.as_view(), name='animal.delete'),
 
     # REST API
-    url(r'^api/users', UserPostList.as_view())
+    url(r'^api/users', UserPostList.as_view()),
 ]
