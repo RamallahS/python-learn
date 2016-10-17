@@ -8,6 +8,29 @@ from .services.auth import auth_views
 
 from .modules.dashboard.animal_views import AnimalDelete, AnimalCreate, AnimalList, AnimalUpdate
 
+# API TEMP
+from rest_framework import generics, permissions
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+
+
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'is_staff')
+
+
+class UserPostList(generics.ListAPIView):
+    model = User
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+# API REST ///
+
 urlpatterns = [
     url(r'^$', views.index2, name='index'),
     url(r'^auth/form', auth_views.page_auth, name='auth.page'),
@@ -20,4 +43,7 @@ urlpatterns = [
     url(r'^dashboard/animals/new$', AnimalCreate.as_view(), name='animals.new'),
     url(r'^dashboard/animals/edit/(?P<pk>\d+)$', AnimalUpdate.as_view(), name='animal.edit'),
     url(r'^dashboard/animals/delete/(?P<pk>\d+)$', AnimalDelete.as_view(), name='animal.delete'),
+
+    # REST API
+    url(r'^api/users', UserPostList.as_view())
 ]

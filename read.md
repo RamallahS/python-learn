@@ -1,6 +1,10 @@
 # Install packages
 ## Django
 `sudo pip install Django`
+
+## Install Django Rest framework
+`sudo pip install djangorestframework`
+
 ## Webpack Loader
 https://github.com/owais/django-webpack-loader
 `sudo npm install webpack -g`
