@@ -4,6 +4,9 @@
 
 ## Install Django Rest framework
 `sudo pip install djangorestframework`
+### Help
+ - http://toly.github.io/blog/2014/03/14/getting-started-with-django-rest-framework-and-angularjs/
+ - https://habrahabr.ru/post/160117/
 
 ## Webpack Loader
 https://github.com/owais/django-webpack-loader
