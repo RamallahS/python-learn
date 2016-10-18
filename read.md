@@ -1,6 +1,10 @@
 # Install packages
+
 ## Install PIP
 http://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3
+
+## Install Virtualenv
+
 ## Django
 `sudo pip install Django`
 
